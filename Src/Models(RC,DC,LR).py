@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split,GridSearchCV
 from sklearn.compose import ColumnTransformer
 from sklearn.metrics import r2_score,accuracy_score,confusion_matrix,ConfusionMatrixDisplay,classification_report,mean_squared_error
 
-df=pd.read_csv("Data(cleaned and raw)/FarmYield(Engineering).csv")
+df=pd.read_csv("Data(raw and cleaned)/FarmYield(Engineering).csv")
 #Label Encoding binary columns
 le=LabelEncoder()
 for c in ["FertilizerUsed","PesticideUsed","ImprovedSeed"]:
