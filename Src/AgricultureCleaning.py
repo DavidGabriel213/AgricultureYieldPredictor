@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-df=pd.read_csv("/storage/emulated/0/Download/nigerian_crop_yield_messy.csv")
+df=pd.read_csv("Data(raw and cleaned)/nigerian_crop_yield_messy.csv")
 df=df.drop_duplicates()
 df["FarmID"]=df["FarmID"].astype(str).str.strip()
 df["State"]=df["State"].astype(str).str.strip()
