@@ -5,10 +5,10 @@ import joblib
 import os
 
 app=Flask(__name__)
-processor_cat=joblib.load('preprocessor/processor_cat.joblib')
-processor_reg=joblib.load('preprocessor/processor_reg.joblib')
-cat_model=joblib.load('models/XGB_model.joblib')
-reg_model=joblib.load('models/LinearRegresModel.joblib')
+processor_cat=joblib.load('Preprocessor/processor_cat.joblib')
+processor_reg=joblib.load('Preprocessor/processor_reg.joblib')
+cat_model=joblib.load('Models/XGB_model.joblib')
+reg_model=joblib.load('Models/LinearRegresModel.joblib')
 @app.route('/',methods=['GET','POST'])
 def myfunc():
     predicted_yield=None
