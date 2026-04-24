@@ -84,7 +84,7 @@ def myfunc():
             'High':'high',
             'Medium': 'medium',
             'Low': 'low',
-            'Very low':'very low'
+            'Very low':'verylow'
                }  
         cat_class=class_map.get(Category,'')
     return render_template('Crop_yield.html', Category=Category, predicted_yield=predicted_yield, cat_class=cat_class)
