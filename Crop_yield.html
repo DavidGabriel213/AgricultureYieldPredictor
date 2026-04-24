@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="{{ url_for ('static', filename='crop_yield.css')}}">
+  <title>CropYieldCategory</title>
+</head>
+<body>
+  <div class="Dex">
+    <form action="/" method="POST">
+     <h1>CropYield Estimator and Category Predictor</h1>
+     <p>Enter Required Details</p>
+      <label>Temperature(⁰C):</label>
+      <input type="number" name="temperature" step="any" placeholder="Enter Temperature in ⁰C"required >
+      <br>
+      <label>Humidity(%):</label>
+      <input type="number" name="humidity" step="any" placeholder="Enter Humidity(%)" required > 
+      <br>
+      <label>Farm Experience(Yrs):</label>
+      <input type="number" name="experience" step="any" placeholder="Enter Farm Experience in yrs" required > 
+      <br>
+      <label>Number Of Workers:</label>
+      <input type="number" name="num_workers" placeholder="Enter Num of workers" required>
+      <br> 
+      <label>Previous Yield(tons/ha):</label>
+      <input type="number" name="prev_yield" step="any" placeholder="Enter Previous Farm Yield in tons/ha" required>
+      <br>
+      <label>Rainfall(mm):</label>      
+      <input type="number" name="rainfall" step="any" placeholder="Enter Rainfall(mm)" required>
+      <br>
+      <label>SoilPH:</label>      
+      <input type="number" name="soil_PH" step="any" placeholder="Enter SoilPH" required>
+      <br> 
+      <label>Fertilizer(kg/ha):</label>
+      <input type="number" name="fertilizer" step="any" placeholder="Enter Fertilizer Used in kg/ha" required>
+      <br> 
+      <label>Pesticide(L/ha):</label>
+      <input type="number" name="pesticide" step="any" placeholder="Enter Fertilizer Used in L/ha" required>
+      <br> 
+      <label>DistanceToMarket:</label>
+      <input type="number" name="distance" step="any" placeholder="Enter Distance To Market in km" required>
+      <br> 
+      <label>PlantingDensity(plants/ha):</label>
+      <input type="number" name="planting_density" step="any" placeholder="Enter Planting Density in plants/ha" required>
+      <br> 
+      <label>FarmSize(Hectares):</label>
+      <input type="number" name="farm_size" step="any" placeholder="Enter FarmSize in Hectares" required>
+      <br>
+      <label>State:</label>
+      <select name="state">
+        <option value="Kebbi">Kebbi</option>
+        <option value="Bauchi">Bauchi</option>
+        <option value="Sokoto">Sokoto</option>
+        <option value="Yobe">Yobe</option>
+        <option value="Benue">Benue</option>
+        <option value="Taraba">Taraba</option>
+        <option value="Katsina">Katsina</option>
+        <option value="Adamawa">Adamawa</option>
+        <option value="Kaduna">Kaduna</option>
+        <option value="Gombe">Gombe</option>
+        <option value="Jigawa">Jigawa</option>
+        <option value="Niger">Niger</option>
+        <option value="Kano">Kano</option>
+        <option value="Zamfara">Zamfara</option>
+        <option value="Plateau">Plateau</option>
+      </select>
+      <br>
+    <label>Crop:</label> 
+    <select name="crop">
+        <option value="Maize">Maize</option>
+        <option value="Millet">Millet</option>
+        <option value="Cowpea">Cowpea</option>
+        <option value="Groundnut">Groundnut</option>
+        <option value="Sorghum">Sorghum</option>
+        <option value="Rice">Rice</option>
+        <option value="Cassava">Cassava</option>
+        <option value="Wheat">Wheat</option>
+        <option value="Soybean">SoyaBeans</option>
+        <option value="Yam">Yam</option>
+      </select>
+      <br>
+      <label>Season:</label>
+      <select name="season">
+        <option value="Rainy Season">Rainy season</option>
+        <option value="Dry Season">Dry season</option>
+      </select>
+        <br>
+     <label>Soil Type:</label>
+     <select name="soil_type">
+        <option value="Loamy">Loamy</option>
+        <option value="Clay">Clay</option>
+        <option value="Sandy">Sandy</option>
+        <option value="Silt">Silt</option>
+      </select>
+      <br>
+      <label>Farming Method:</label>
+      <select name="farming_method">
+        <option value="Irrigation">Irrigation</option>
+        <option value="Rain-Fed">Rain-Fed</option>
+        <option value="Mixed">Mixed</option>
+      </select>
+      <br>
+      <label>Irrigation Type:</label>
+      <select name="irrigation_type">
+        <option value="Flood">Flood</option>
+        <option value="Sprinkler">Sprinkler</option>  
+        <option value="Drip">Drip</option>   
+        <option value="None">None</option>  
+      </select>
+      <br>
+      <label>Fertilizer Used:</label>
+      <select name="fertilizer_used">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+      <br>
+      <label>Pesticide Used:</label>
+      <select name="pesticide_used">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+      <br>
+      <label>Improved Seed:</label>
+      <select name="improved_seed">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+      <br>
+      <label>Credit Access:</label>
+      <select name="credit_access">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+      <br>
+      <label>Extension Services:</label>
+      <select name="extension_services">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+      <br>
+      <button type="submit">Predict</button>
+      <br>
+  <div>
+  {% if Category %}
+  <div class="cat {{cat_class}}">{{ Category }}</div>
+  <div class="yield">{{ predicted_yield }} </div>
+  {% endif %}
+  </div>
+    </form>
+  </div>
+</body>
+</html>
