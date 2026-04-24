@@ -35,7 +35,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Subtle dot grid background */
 body::before {
     content: '';
     position: fixed;
@@ -48,8 +47,6 @@ body::before {
     z-index: 0;
     pointer-events: none;
 }
-
-/* Glow top left */
 body::after {
     content: '';
     position: fixed;
@@ -66,7 +63,6 @@ body::after {
     pointer-events: none;
 }
 
-/* Wrapper */
 .Dex {
     position: relative;
     z-index: 1;
@@ -74,7 +70,6 @@ body::after {
     max-width: 620px;
 }
 
-/* Form card */
 form {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -86,7 +81,6 @@ form {
         inset 0 1px 0 rgba(255, 255, 255, 0.03);
 }
 
-/* Title */
 h1 {
     font-family: 'Syne', sans-serif;
     font-size: 22px;
@@ -110,7 +104,6 @@ h1::before {
     border-radius: 2px;
 }
 
-/* Subtitle */
 p {
     color: var(--muted);
     font-size: 13px;
@@ -118,7 +111,6 @@ p {
     margin-bottom: 28px;
 }
 
-/* Labels */
 label {
     display: block;
     font-family: 'Syne', sans-serif;
@@ -131,7 +123,6 @@ label {
     margin-bottom: 6px;
 }
 
-/* Number inputs */
 input[type="number"] {
     width: 100%;
     padding: 11px 15px;
@@ -162,7 +153,6 @@ input[type="number"]:focus {
     box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.09);
 }
 
-/* Selects */
 select {
     width: 100%;
     padding: 11px 15px;
@@ -194,7 +184,6 @@ select option {
     color: var(--text);
 }
 
-/* Submit button */
 button[type="submit"] {
     width: 100%;
     margin-top: 30px;
@@ -223,7 +212,6 @@ button[type="submit"]:active {
     transform: translateY(0);
 }
 
-/* Result boxes */
 .yield {
     margin-top: 24px;
     padding: 18px 24px;
@@ -273,15 +261,12 @@ button[type="submit"]:active {
     opacity: 0.7;
 }
 
-/* Category colors — Flask sets text content */
-/* Apply via JS or keep as default green */
 .cat {
     background: rgba(74, 222, 128, 0.08);
     border-color: rgba(74, 222, 128, 0.3);
     color: var(--high);
 }
 
-/* Override per category — add class in Flask */
 .cat.high {
     background: rgba(74, 222, 128, 0.08);
     border-color: rgba(74, 222, 128, 0.3);
@@ -311,10 +296,8 @@ button[type="submit"]:active {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* br spacer cleanup */
 br { display: block; margin: 0; }
 
-/* Scrollbar */
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb {
@@ -322,7 +305,6 @@ br { display: block; margin: 0; }
     border-radius: 2px;
 }
 
-/* Mobile */
 @media (max-width: 580px) {
     form { padding: 30px 18px; }
     h1 { font-size: 18px; }
