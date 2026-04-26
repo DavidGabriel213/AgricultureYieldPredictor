@@ -142,7 +142,7 @@ CropYieldPredictor/
 
 ## 🚀 Run Locally
 ```bash
-git clone https://github.com/DavidGabriel213/CropYieldPredictor
+git clone https://github.com/DavidGabriel213/AgricultureYieldPredictor 
 cd CropYieldPredictor
 pip install -r requirements.txt
 python APP.py
