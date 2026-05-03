@@ -46,9 +46,9 @@ def myfunc():
            "DistanceToMarket":DistanceToMarket,"PlantingDensity":PlantingDensity, "FarmSize":FarmSize}
         for c in d:
             d[c]=np.log1p(d[c])
-        FarmAccessComfort=(FarmSize/DistanceToMarket)
+        FarmAccessComfort=(d['FarmSize']/d['DistanceToMarket'])
         EnvironmentComfort=(Temperature/Humidity)
-        SoilIndex=(Rainfall/(Fertilizer+SoilPH))
+        SoilIndex=(d['Rainfall']/(d['Fertilizer']+d['SoilPH']))
         IncreaseRate=(PreviousYield/NumWorkers)
         # features
         features=pd.DataFrame({"State":[State],"Crop":[Crop],"Season":[Season],"SoilType":[SoilType],
@@ -70,7 +70,7 @@ def myfunc():
         predicted_category=cat_model.predict(features_cat)
         y_reg_log=reg_model.predict(features_reg)
         # yield
-        predicted_yield=np.expm1(y_reg_log).round(2)
+        predicted_yield=np.expm1(y_reg_log)[0].round(2)
         # category
         if predicted_category==0:
             Category='High'
@@ -84,7 +84,7 @@ def myfunc():
             'High':'high',
             'Medium': 'medium',
             'Low': 'low',
-            'Very low':'very low'
+            'Very low':'verylow'
                }  
         cat_class=class_map.get(Category,'')
     return render_template('Crop_yield.html', Category=Category, predicted_yield=predicted_yield, cat_class=cat_class)
