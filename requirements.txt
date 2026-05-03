@@ -1,7 +1,8 @@
 flask
 numpy
-pandas
-xgboost
 joblib
+pandas
+xgboost 
+lightgbm 
 scikit-learn
 gunicorn
