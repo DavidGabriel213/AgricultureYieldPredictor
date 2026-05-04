@@ -3,7 +3,7 @@
 A complete dual-target ML project predicting both the **actual crop yield in tons/ha** (regression) and **yield category** (classification) from Nigerian farm data — 20,000 rows, 10 crops, 15 states.
 
 ## 🌐 Live Demo
-**[Try the app →](https://your-deployment-url.up.railway.app)**
+**[Try the app →](web-yieldandcategorypred.up.railway.app)**
 
 ---
 
