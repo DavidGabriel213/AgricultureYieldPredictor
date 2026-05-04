@@ -70,7 +70,7 @@ def myfunc():
         features_cat=processor_cat.transform(features)
         features_reg=processor_reg.transform(features)
         #predictions
-        predicted_category=cat_model.predict(features_cat)
+        predicted_category=cat_model.predict(features_cat)[0]
         y_reg_log=reg_model.predict(features_reg)
         # yield
         predicted_yield=(np.expm1(y_reg_log))[0].round(2)
